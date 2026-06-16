@@ -105,11 +105,6 @@ function asSizeString(size) {
   return "Beyond mortal comprehension"
 }
 
-function errorReports(send) {
-  var jqxhr = $.get("errorreports?send=" + send)
-  $('#error_reports_card').fadeOut(500)
-}
-
 function dismissRemoveStopAddons() {
   var jqxhr = $.get("dismiss_remove_stop_addons");
   $('#stop_addon_removal_survey').fadeOut(500);
@@ -747,8 +742,6 @@ function processStatusUpdate(data) {
     question_card = "backups_boot_waiting_card";
   } else if(data.warn_ingress_upgrade && !hideIngress) {
     question_card = "ingress_upgrade_card";
-  } else if (data.ask_error_reports && !found) {
-    question_card = "error_reports_card";
   } else if (data.warn_backup_upgrade && !found) {
     question_card = "backup_upgrade_card";
   } else if (data.warn_upgrade_backups) {

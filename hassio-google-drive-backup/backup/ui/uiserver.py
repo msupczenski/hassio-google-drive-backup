@@ -104,8 +104,6 @@ class UiServer(Trigger, Startable):
             status['backups'].append(self.getBackupDetails(backup))
         status['ha_url_base'] = self._ha_source.getHomeAssistantUrl()
         status['restore_backup_path'] = "hassio/backups"
-        status['ask_error_reports'] = not self.config.isExplicit(
-            Setting.SEND_ERROR_REPORTS)
         status['warn_ingress_upgrade'] = False
         status['cred_version'] = self._global_info.credVersion
         next = self._coord.nextBackupTime()
@@ -473,16 +471,6 @@ class UiServer(Trigger, Startable):
             'is_custom_creds': self._coord._model.dest.isCustomCreds(),
         })
 
-    async def errorreports(self, request: Request):
-        send = BoolValidator.strToBool(request.query.get("send", False))
-
-        update = {
-            "send_error_reports": send
-        }
-        validated = self.config.validateUpdate(update)
-        await self._updateConfiguration(validated)
-        return web.json_response({'message': 'Configuration updated'})
-
     async def dismiss_remove_stop_addons(self, request: Request):
         self._data_cache.addFlag(UpgradeFlags.NOTIFIED_ABOUT_STOPADDONS)
         self._data_cache.saveIfDirty()
@@ -724,7 +712,6 @@ class UiServer(Trigger, Startable):
         self._addRoute(app, self.cancelSync)
 
         self._addRoute(app, self.getconfig)
-        self._addRoute(app, self.errorreports)
         self._addRoute(app, self.exposeserver)
         self._addRoute(app, self.saveconfig)
         self._addRoute(app, self.changefolder)

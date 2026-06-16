@@ -49,11 +49,6 @@ class DebugWorker(Worker):
             await self.updateDns()
         if not self._last_server_check or self.time.now() > self._last_server_check + self._last_server_refresh:
             await self.updateHealthCheck()
-        if self.config.get(Setting.SEND_ERROR_REPORTS):
-            try:
-                await self.maybeSendErrorReport()
-            except Exception:
-                pass
 
     # Once per day, query the health endpoint of the token server to see who is up.
     # This checks for broadcast messages for all users and also finds which token
@@ -78,29 +73,6 @@ class DebugWorker(Worker):
 
         # no good token host could be found, so reset it to the default and check again sooner.
         self._last_server_refresh = timedelta(minutes=1)
-
-    async def maybeSendErrorReport(self):
-        error = self._info._last_error
-        if error is not None:
-            if isinstance(error, KnownError):
-                error = error.code()
-            else:
-                error = logger.formatException(error)
-        if error != self.last_sent_error:
-            self.last_sent_error = error
-            if error is not None:
-                self.last_sent_error_time = self.time.now()
-                package = await self.buildErrorReport(error)
-            else:
-                package = self.buildClearReport()
-            logger.info("Sending error report (see settings to disable)")
-            headers = {
-                'client': self.config.clientIdentifier(),
-                'addon_version': VERSION
-            }
-            url = URL(self.config.get(Setting.AUTHORIZATION_HOST)).with_path("/logerror")
-            async with self.session.post(url, headers=headers, json=package):
-                pass
 
     async def updateDns(self):
         self.last_dns_update = self.time.now()
@@ -171,13 +143,6 @@ class DebugWorker(Worker):
             report['core_logs'] = "\n".join((await self.ha.getCoreLogs()).split("\n")[-ERROR_LOG_LENGTH:])
         except Exception as e:
             report['core_logs'] = logger.formatException(e)
-        return report
-
-    def buildClearReport(self):
-        duration = self.time.now() - self.last_sent_error_time
-        report = {
-            'duration': str(duration)
-        }
         return report
 
     def formatDate(self, date: datetime):

@@ -22,28 +22,15 @@ This is for you if you want to quickly set up a backup strategy without much fus
 - Comprehensive documentation.
 - _Most certainly_ doesn't mine bitcoin on your home automation server. Definitely no.  Or does it?
 
-### The Upsell
-This addon has been featured by %YOUR_FAVORITE_HA_YOUTUBER% and is often listed as an _essential_ addon when starting with Home Assistant.  Here are some videos about it from others if you'd like to get an idea of what using it looks like or what the community thinks:
-
-[<img src="http://img.youtube.com/vi/GwmPPtBRdjQ/0.jpg" width="300"/>](http://www.youtube.com/watch?v=GwmPPtBRdjQ "Everything Smart Home")
-[<img src="http://img.youtube.com/vi/WcErD5PvIYw/0.jpg" width="300"/>](http://www.youtube.com/watch?v=WcErD5PvIYw "DrZzs")
-
->This project requires financial support to make the Google Drive integration work, but it is free for you to use.  You can join those helping to keep the lights on at:
->  
->[<img src="images/bmc-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.buymeacoffee.com/sabeechen)
->[<img src="images/paypal-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.paypal.com/paypalme/stephenbeechen)
->[<img src="images/patreon-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.patreon.com/bePatron?u=4064183)
->[<img src="images/github-sponsors-button.svg" width=150 height=40 style="margin: 5px"/>](https://github.com/sponsors/sabeechen)
->[<img src="images/monero-button.svg" width=150 height=40 style="margin: 5px"/>](donate-crypto.md)
->[<img src="images/bitcoin-button.svg" width=150 height=40 style="margin: 5px"/>](donate-crypto.md)
->[<img src="images/ethereum-button.svg" width=150 height=40 style="margin: 5px"/>](donate-crypto.md)
+### Credits
+This is a community-maintained fork of the original add-on created by [Stephen Beechen](https://github.com/sabeechen). All credit for the original design and implementation goes to him. This fork is maintained by [Mike Supczenski](https://github.com/msupczenski) to keep the add-on up to date.
 
 
 
 ### Detailed Install Instructions
 1. Navigate in your Home Assistant frontend to <kbd>Settings</kbd> -> <kbd>Add-ons</kbd> -> <kbd>Add-on Store (Bottom Right)</kbd>.
 
-2. Click the 3-dots menu at upper right <kbd>...</kbd> > <kbd>Repositories</kbd> and add this repository's URL: [https://github.com/sabeechen/hassio-google-drive-backup](https://github.com/sabeechen/hassio-google-drive-backup)
+2. Click the 3-dots menu at upper right <kbd>...</kbd> > <kbd>Repositories</kbd> and add this repository's URL: [https://github.com/msupczenski/hassio-google-drive-backup](https://github.com/msupczenski/hassio-google-drive-backup)
 
    <img src="images/add_ss.png" width="300"/>
 
@@ -231,7 +218,7 @@ On a matter of principle, I only keep track of and store information necessary f
 - Google stores a history of information about the number of requests, number of errors, and latency of requests made by this Add-on and makes a graph of that visible to me. This is needed because Google only gives me a certain quota for requests shared between all users of the add-on, so I need to be aware if someone is abusing it.
 - The Add-on is distributed as a Docker container hosted on Docker Hub, which is how almost all add-ons work. Docker keeps track of how many people have requested an image and makes that information publicly visible.
 
-This invariably means that I have a very limited ability to see how many people are using the add-on or if it is functioning well. If you do like it, feel free to shoot me an email at [stephen@beechens.com](mailto:stephen@beechens.com) or star this repo on GitHub, it helps keep me motivated. If you run into problems or think a new feature would be nice, file an issue on GitHub.
+This invariably means that I have a very limited ability to see how many people are using the add-on or if it is functioning well. If you run into problems or think a new feature would be nice, file an issue on [GitHub](https://github.com/msupczenski/hassio-google-drive-backup/issues).
 
 ### Can I use my own Google API information to authenticate instead of yours?
 

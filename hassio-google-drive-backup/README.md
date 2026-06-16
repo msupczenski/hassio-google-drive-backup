@@ -6,15 +6,7 @@ A complete and easy way to upload your Home Assistant backups to Google Drive.
 
 Quickly set up a backup strategy without much fuss. It doesn't require much familiarity with Home Assistant, its architecture, or Google Drive. Detailed install instructions are provided below but you can just add the repo, click install and open the Web UI. It will tell you what to do and only takes a few simple clicks.
 
->This project requires financial support to make the Google Drive integration work, but it is free for you to use.  You can join those helping to keep the lights on at:
->  
->[<img src="https://raw.githubusercontent.com/sabeechen/hassio-google-drive-backup/master/images/bmc-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.buymeacoffee.com/sabeechen)
->[<img src="https://raw.githubusercontent.com/sabeechen/hassio-google-drive-backup/master/images/paypal-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.paypal.com/paypalme/stephenbeechen)
->[<img src="https://raw.githubusercontent.com/sabeechen/hassio-google-drive-backup/master/images/patreon-button.svg" width=150 height=40 style="margin: 5px"/>](https://www.patreon.com/bePatron?u=4064183)
->[<img src="https://raw.githubusercontent.com/sabeechen/hassio-google-drive-backup/master/images/github-sponsors-button.svg" width=150 height=40 style="margin: 5px"/>](https://github.com/sponsors/sabeechen)
->[<img src="https://raw.githubusercontent.com/sabeechen/hassio-google-drive-backup/master/images/monero-button.svg" width=150 height=40 style="margin: 5px"/>](https://github.com/sabeechen/hassio-google-drive-backup/blob/master/donate-crypto.md)
->[<img src="https://raw.githubusercontent.com/sabeechen/hassio-google-drive-backup/master/images/bitcoin-button.svg" width=150 height=40 style="margin: 5px"/>](https://github.com/sabeechen/hassio-google-drive-backup/blob/master/donate-crypto.md)
->[<img src="https://raw.githubusercontent.com/sabeechen/hassio-google-drive-backup/master/images/ethereum-button.svg" width=150 height=40 style="margin: 5px"/>](https://github.com/sabeechen/hassio-google-drive-backup/blob/master/donate-crypto.md)
+> This is a community-maintained fork of the original add-on by [Stephen Beechen](https://github.com/sabeechen), kept up to date by [Mike Supczenski](https://github.com/msupczenski).
 
 
 ### Features
@@ -30,5 +22,5 @@ Quickly set up a backup strategy without much fuss. It doesn't require much fami
 - Comprehensive documentation.
 - _Most certainly_ doesn't mine bitcoin on your home automation server. Definitely no.
 
-See the [README on GitHub](https://github.com/sabeechen/hassio-google-drive-backup) for all the details, or just install the add-on and open the Web UI.
+See the [README on GitHub](https://github.com/msupczenski/hassio-google-drive-backup) for all the details, or just install the add-on and open the Web UI.
 The Web-UI explains everything you have to do.

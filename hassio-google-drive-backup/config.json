@@ -105,5 +105,5 @@
   },
   "ports_description": {
     "1627/tcp": "Direct access to the add-on without ingress.  Must be enabled in the settings, see 'expose_extra_server'."
-  },
+  }
 }
